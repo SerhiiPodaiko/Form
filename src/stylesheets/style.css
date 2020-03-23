@@ -1,0 +1,68 @@
+body {
+    padding: 5px 0;
+    height: 100vh;
+}
+
+.form-container {
+    margin: 0 auto;
+    padding: 20px;
+    min-width: 320px;
+    max-width: 480px;
+    width: 100%;
+    border: 2px solid gray;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.step:not(:last-child)::before {
+    content: '';
+    position: absolute;
+    height: 3px;
+    width: 50px;
+    background: silver;
+    top: 18px;
+    left: 100%;
+}
+.step:nth-child(2)::before, .step:nth-child(3)::before {
+    width: 50px;
+    left: 95%;
+}
+
+.step__marker {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: silver;
+}
+
+.is-active {
+    background: aqua;
+    border: 4px solid #FF6E14;
+}
+
+.is-completed {
+    background: #FF6E14;
+}
+
+.step .is-completed-before::before {
+    background: #FF6E14;
+}
+
+.form-group {
+    margin-bottom: 16px;
+}
+
+.invalid-feedback {
+    color: red;
+}
